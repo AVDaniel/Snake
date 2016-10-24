@@ -1,0 +1,35 @@
+#border {
+	position: relative;
+	color: blue;
+	align-self: center;
+}
+#p {
+	position: relative;
+	color: blue;
+	text-align: center;
+	font-size: 40px;
+
+}
+#score {
+	color: blue;
+	display: inline;
+	font-size: 40px;
+}
+#scoreNumber {
+	color: blue;
+	display: inline;
+	font-size: 40px;
+}
+#failscreen {
+	position: relative;
+
+}
+body {
+	background-color: black;
+	
+}
+
+#scoreDiv {
+	margin: auto;
+	text-align: center;
+}

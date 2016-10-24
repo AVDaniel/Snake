@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="Assert.js"></script>
+<script src="FiFo Stack.js"></script>
+<link rel="stylesheet" type="text/css" href="Snake.css">
+<title>Snake</title>
+</head>
+
+<body>
+<! <audio autoplay=""; controls="";>
+<source src="music.mp3" type="audio/mpeg">
+</audio>
+<div id="levelDiv"> <p id="level"> Level:</p> <p id="levelNumber">1</p> </div>
+<div id="scoreDiv"> <p id="score">Score: </p> <p id="scoreNumber">0</p> </div>
+<p id="p">Snake</p>
+
+
+<img src="failscreen.png" id="failscreen" onclick="retry()">
+<canvas id="border"; width="700px"; height="700px"; style="border:5px solid blue;" align="middle"></canvas>
+<script src="Snake.js"></script>
+</body>
+</html>
