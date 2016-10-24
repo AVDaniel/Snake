@@ -8,3 +8,16 @@
   return true;
   }
  }
+ 
+  function assertTrue(a) {
+   if(!a) {
+    console.log("fail, a ia not true");
+    return false;
+  }
+  else {
+  console.log("succeeded");
+  return true;
+  }
+ }
+ 
+ 
