@@ -20,11 +20,12 @@ var APPLE_SIZE = 10;
 var t = 1 * APPLE_SIZE;
 var score = 0;
 var stack = new FiFoStack();
-var snakeMovementFrequency = 0000005;
+var snakeMovementFrequency = 3;
 var previousKey;
 var DELTA_STEP = 5;
 var FAILSCREEN = document.getElementById("failscreen");
 var level = 1;
+var audio = document.getElementById("audio");
 
 updateLevel();
 
@@ -36,8 +37,6 @@ function clearTailDotFromScreenAndArray() {
 	var point = stack.pop();
 	ctx.clearRect(point[0], point[1], HEAD_WIDTH, HEAD_HEIGHT);
 }
-
-
 
 function drawHead(x, y) {
 	stack.unshift([x, y]);
@@ -61,7 +60,6 @@ document.addEventListener("keydown", function snakeDirection() {
 var activateMoveSnake = setInterval(snakeMovement, snakeMovementFrequency);
 
 function snakeMovement() {
-	
 	function isSnakeOnBorder() {
 	if((currentX <= 0) || (currentY <=0) || (currentY >= 690) || (currentX >= 690)) {
 		stopSnakeMovement();
@@ -72,13 +70,14 @@ function snakeMovement() {
 	isSnakeOnBorder();
 
 	function isHeadOnBody() {
-		if(stack.size > 0) {
-			for(var i=0; i<=stack.size; i++) {
+		if((stack.stac.length > 1) && (appleX != currentX)) {
+			for(var i=1; i<stack.stac.length; i++) {
 				if((stack.stac[i][0] == currentX) && (stack.stac[i][1] == currentY)) {
 				killSnake();
+				console.log(stack.stac[i][0], stack.stac[i][1], currentX, currentY);
 				return;
 			}
-			}
+		}
 		}
 		else {
 			return;
@@ -161,6 +160,7 @@ function updateScore() {
 }
 
 function pickupApple() {
+	audio.play();
 	ctx.clearRect(appleX, appleY, APPLE_SIZE, APPLE_SIZE);
 	createApple();
 	updateScore();
@@ -212,12 +212,12 @@ function createLevel() {
 function levelTwo() {
 	level = 2;
 	updateLevel();
-	DELTA++;
+	DELTA = DELTA + 1
 }
 function levelThree() {
 	level = 3;
 	updateLevel();
-	DELTA++;
+	DELTA = DELTA + 1;
 }
 function updateLevel() {
 	document.getElementById("levelNumber").innerHTML = level;

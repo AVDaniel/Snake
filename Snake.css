@@ -1,35 +1,45 @@
 #border {
-	position: relative;
-	color: blue;
-	align-self: center;
+    margin: 0;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
-#p {
-	position: relative;
-	color: blue;
-	text-align: center;
-	font-size: 40px;
-
-}
-#score {
+p {
 	color: blue;
 	display: inline;
-	font-size: 40px;
-}
-#scoreNumber {
-	color: blue;
-	display: inline;
-	font-size: 40px;
 }
 #failscreen {
-	position: relative;
-
+	margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+	
 }
 body {
 	background-color: black;
 	
 }
+#score {
+	position: absolute;
+	top: 50px;
+}
+#scoreNumber {
+	position: absolute;
+	color: red;
+	top: 50px;
+}
+#level {
+	position: absolute;
 
-#scoreDiv {
-	margin: auto;
-	text-align: center;
+}
+#levelNumber {
+	position: absolute;
+	color: red;
+}
+#levelDiv {
+	position: absolute;
+	left: 100px;
+	
 }
